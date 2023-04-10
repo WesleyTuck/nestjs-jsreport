@@ -1,8 +1,8 @@
 import { Injectable } from "@nestjs/common";
 import { JsreportService } from "./jsreport.service";
-import ReportDataset from "./report-models/datasets/base.dataset";
-import data from "./report-models/database/data";
-import handlebarHelpers from "./report-models/helpers/handlebar.helpers";
+import ReportDataset from "./structure/datasets/base.dataset";
+import data from "./structure/database/data";
+import handlebarHelpers from "./structure/helpers/handlebar.helpers";
 
 const TEMPLATES_PATH = "/assets/templates";
 
