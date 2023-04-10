@@ -13,12 +13,14 @@ export class AppService {
 
 async generatePdf(){
 
+    const dataset =  new ReportDataset(data, 5);
+    dataset.user = "wesley.silva";
+    dataset.companyName = "Soulbyte Studio"
+
     return this.jsreportService.generateReport(
       `${TEMPLATES_PATH}/reports/person.html`,
-      new ReportDataset(data, 10),
+      dataset,
       handlebarHelpers
     )
   }
-
-    
 }

@@ -1,13 +1,13 @@
-import PageDataset from "./page.dataset";
-
 class BaseDataset{
+    user: string;
+    companyName: string;
     totalPages: number;
     totalElements: number;
     elementsByPage: number;
-    pages: Array<PageDataset>;
+    pages: Array<Page>;
 
     constructor(data: Array<any>, elementsByPage: number){
-        this.pages = new Array<PageDataset>();
+        this.pages = new Array<Page>();
         this.setData(data, elementsByPage);
     }
 
@@ -26,7 +26,7 @@ class BaseDataset{
 
         for(let i = 0;i < this.totalPages;i++){
 
-            const page = new PageDataset();
+            const page = new Page();
 
             let ii = 0;
 
@@ -43,6 +43,14 @@ class BaseDataset{
 
             this.pages.push(page);
         }
+    }
+}
+
+class Page{
+    data: Array<any>;
+
+    constructor(){
+        this.data = new Array<any>();
     }
 }
 
